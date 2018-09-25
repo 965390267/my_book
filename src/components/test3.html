@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #jump {
+            margin-top: 400px;
+        }
+        
+        span {
+            cursor: pointer;
+            position: relative;
+            top: 0px;
+            font-size: 20px;
+            display: inline-block;
+            /* animation: rotate 1s 1 ; */
+            transition: all 1s;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotateZ(0deg)
+            }
+            to {
+                transform: rotateZ(360deg)
+            }
+        }
+        
+        .active {
+            animation: rotate 1s 1;
+        }
+        /* span:hover{
+top:-60px;
+animation:rotate 1s ;
+} */
+    </style>
+</head>
+
+<body>
+    <div id='jump'>摸我我就要跳啦呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀 呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀呀
+    </div>
+    <script>
+        var jump = document.getElementById('jump');
+        jjj()
+
+        function jjj() {
+            var font = jump.innerText;
+            jump.innerText = ''
+
+            for (var i = 0; i < font.length; i++) {
+                var node = document.createElement('span');
+                // node.style.transition='all 0s '
+                node.innerHTML = font[i];
+                // node.onmouseover=function(){
+                // node.style.top='-60px';
+                // node.style.transition='all 1s'
+                // }
+                // node.onmouseout=function(){
+                // node.style.top='0px';
+                // }
+                jump.appendChild(node)
+            }
+
+            var allspan = document.getElementsByTagName('span');
+
+            for (let j = 0; j < allspan.length; j++) {
+
+                allspan[j].onmouseenter = function() {
+                    console.log(j)
+
+                    allspan[j].style.transition = 'all 0s'
+                    allspan[j].style.top = '-50px';
+                    allspan[j].className = 'active'
+                }
+                allspan[j].onmouseleave = function() {
+                    setTimeout(() => {
+                        allspan[j].className = ''
+                    }, 1000)
+
+                    allspan[j].style.top = '0px';
+                    allspan[j].style.transition = 'all 1s'
+                }
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

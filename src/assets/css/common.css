@@ -1,0 +1,66 @@
+div,
+p,
+a,
+span,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+    padding: 0px;
+    color: #333;
+    font-family: '微软雅黑';
+}
+
+ul {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.mu-paper {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.el-collapse-item__header {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.el-collapse .iconfont {
+    position: relative;
+}
+
+.el-collapse-item::before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    z-index: 4;
+}
+
+.mu-flat-button {
+    width: 100%；
+}
+
+.right-container {
+    padding-left: 115px;
+    width: 100%;
+}
+
+.mu-auto-complete.fullWidth {
+    width: 65%;
+}
+
+.mu-popover {
+    width: 100%;
+    border: none;
+}
